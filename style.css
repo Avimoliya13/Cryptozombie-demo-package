@@ -1,0 +1,140 @@
+/* Minimal styling only; no structural changes */
+:root{
+  --bg:#0b0f14; --card:#121821; --muted:#9aa9bd; --text:#e7eef7; --accent:#4da3ff;
+  --border:#1f2c3b; --ok:#22c55e; --err:#ef4444;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+body{
+  margin:0; 
+  padding:24px;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text); 
+  background-image: url('https://wallpapers.com/images/high/halloween-graveyard-laptop-art-02ryluvrze4adlsg.webp');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Dark overlay so text is readable */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+  pointer-events: none;
+}
+
+#txStatus{
+  margin:0 0 16px; 
+  padding:10px 14px; 
+  border:1px solid var(--border);
+  background:rgba(77,163,255,.08); 
+  border-radius:10px; 
+  color:#d7ebff;
+  position: relative;
+  z-index: 1;
+}
+
+#zombies{
+  display:grid; 
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); 
+  gap:24px; 
+  margin-top:24px;
+  position: relative;
+  z-index: 1;
+}
+
+.zombie{
+  background:var(--card); 
+  border:1px solid var(--border); 
+  border-radius:14px; 
+  padding:12px 14px;
+  box-shadow:0 10px 24px rgba(0,0,0,.25);
+}
+
+.zombie ul{list-style:none; padding:0; margin:0}
+
+button{
+  background:#0e1724; 
+  color:var(--text); 
+  border:1px solid var(--border);
+  padding:10px 14px; 
+  border-radius:10px; 
+  cursor:pointer; 
+  transition:.15s;
+  margin-right:8px; 
+  margin-bottom:8px;
+  position: relative;
+  z-index: 1;
+}
+
+button:hover{transform:translateY(-1px); border-color:#2a3a50}
+.showZombieButton{background:#182233}
+.createzombieButton{background:linear-gradient(180deg,#1b7fff,#1c5fe8); border-color:#2a69ff}
+.levelupButton{background:linear-gradient(180deg,#1e3a8a,#0f2a66); border-color:#21407a}
+
+/* === Zombie Card Styling (vibrant contrast) === */
+.zombie-card {
+  background: #bec4c7 !important;
+  color: #143e67 !important;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5),
+              0 0 10px rgba(77, 163, 255, 0.15);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.zombie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6),
+              0 0 15px rgba(0, 195, 255, 0.35);
+}
+
+.zombie-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Header styling for zombie theme */
+header {
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+  color: white;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-weight: 700;
+}
+
+header p {
+  margin: 10px 0 0 0;
+  font-size: 1.1em;
+  opacity: 0.9;
+  font-weight: 300;
+}
